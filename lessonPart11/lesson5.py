@@ -1,6 +1,6 @@
 # my_join : which joins list given as first argument to a string
 # separated with character given as second argument.
-# Function returns a string.
+# Function returns a string.1
 
 def my_join(my_list, insert):
     my_text = ''
