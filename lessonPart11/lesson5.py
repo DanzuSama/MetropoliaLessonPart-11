@@ -1,27 +1,33 @@
-#my_join : который соединяет список, заданный в качестве первого аргумента, со строкой,
-# разделенной символом, заданным в качестве второго аргумента. Функция возвращает строку.
-def my_join():
-    print()
+# my_join : which joins list given as first argument to a string
+# separated with character given as second argument.
+# Function returns a string.
 
-#my_split : который разбивает предложение, указанное в качестве первого аргумента,
-# используя второй аргумент в качестве символа-разделителя для разделения элементов списка.
-# Функция возвращает список элементов.
+def my_join(my_list, insert):
+    my_text = ''
+    for x in range(len(my_list)):
+        my_text += my_list[x]
+        if x + 1 != len(my_list):
+            my_text += insert
+    return my_text
+
+
+# my_split : my_split : which splits sentence given as first argument
+# using second argument as a separator character to separate list items.
+# Function returns a list of items.
 def my_split(text, sim):
     list = []
-    print(type(text))
-    print(list)
+    temp = ''
+    for x in range(len(text)):
+        if text[x] != sim:
+            temp += text[x]
+        if text[x] == sim:
+            list.append(temp)
+            temp = ''
+        if x + 1 == len(text) and text[x] != sim:
+            list.append(temp)
+    return list
 
 
-
-
-x = 'This is a sentence'
-print(my_split(x, ' '))
-
-
-
-
-'''
 sentence = str(input('Please enter sentence: '))
-print(my_join(my_split(sentence,' '),','))
-print(my_join(my_split(sentence,' '),'\n'))
-'''
+print(my_join(my_split(sentence, ' '), ','))
+print(my_join(my_split(sentence, ' '), '\n'))
